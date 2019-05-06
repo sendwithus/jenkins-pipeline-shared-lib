@@ -1,11 +1,11 @@
 def call() {
-    if (args.action == 'checkLint') {
-        return checkLint()
+    if (args.action == 'lint') {
+        return lint()
     }
     error 'skipStage has been called without valid arguments'
 }
 
-def checkLint() {
+def lint() {
     env.LINT_SKIP = "false"
     result = sh (script: "git log -1 | grep '.*\\[lint skip\\].*'", returnStatus: true)
     if (result == 0) {
