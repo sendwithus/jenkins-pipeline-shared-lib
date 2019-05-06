@@ -2,7 +2,7 @@ def call(Map args) {
     if (args.action == 'lint') {
         return lint()
     }
-    if (args.action == 'pr') {
+    if (args.action == 'prEnv') {
         return prEnv()
     }
     error 'skipStage has been called without valid arguments'
