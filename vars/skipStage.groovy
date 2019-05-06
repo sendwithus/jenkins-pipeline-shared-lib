@@ -10,6 +10,6 @@ def checkLint() {
     result = sh (script: "git log -1 | grep '.*\\[lint skip\\].*'", returnStatus: true)
     if (result == 0) {
         env.LINT_SKIP = "true"
-        error "'[lint skip]' found in git commit message. Aborting."
+        echo "'[lint skip]' found in git commit message. Aborting."
     }
 }
